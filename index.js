@@ -36,20 +36,22 @@ serialPort.on("open", function () {
     }
 
     if(fullData.indexOf(">")>-1){
-      serialPort.write(quotes[getRandomArbitrary(0,10)]+String.fromCharCode(26));
+      var rand=getRandomArbitrary(0,10);
+      var message=quotes[rand];
+      serialPort.write(message+String.fromCharCode(26));
       fullData="";
     }
   });
   serialPort.write("AT+CMGF=1"+String.fromCharCode(13));
 });
 function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 var stateMachine= function(data){
   console.log(data);
   switch(data.code){
   case "AT+CMGF":
-    serialPort.write("AT+CSMP=17,167,0,16"+String.fromCharCode(13));
+    serialPort.write("AT+CSMP=17,167,0,0"+String.fromCharCode(13));
     break;
   case "AT+CSMP":
     serialPort.write("AT+CMGS=\"0040723721183\""+String.fromCharCode(13));
