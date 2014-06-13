@@ -1,0 +1,29 @@
+{
+  "name": "nodeSMS",
+  "version": "0.0.1",
+  "description": "send sms via serial using a modem and nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:0x4139/nodeSMS.git"
+  },
+  "keywords": [
+    "sms",
+    "node",
+    "sms",
+    "npm",
+    "sms"
+  ],
+  "author": "0x4139@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0x4139/nodeSMS/issues"
+  },
+  "homepage": "https://github.com/0x4139/nodeSMS",
+  "dependencies": {
+    "serialport": "^1.4.0"
+  }
+}
